@@ -39,11 +39,12 @@ client.on("message", (message) => {
       for (let i = 0; i < numberOfDice; i++) {
         dice.push(rn(diceOptions));
       }
-      let diceMessage = 'You rolled ';
+      let diceMessage = `You rolled `;
       dice.forEach((die) => {
-        diceMessage += die + ', ';
+       diceMessage += die + ", ";
       })
-      message.reply(diceMessage);
+      diceMessage = diceMessage.replace(/,(\s+)?$/, '');
+      message.reply(diceMessage + "!");
     }
 
     // const firstDiceOptions = {
