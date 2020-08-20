@@ -44,26 +44,11 @@ client.on("message", (message) => {
        diceMessage += die + ", ";
       })
       diceMessage = diceMessage.replace(/,(\s+)?$/, '');
-      message.reply(diceMessage + "!");
+      setTimeout(() => {
+        message.reply(diceMessage + "!");
+      }, 2000);
+      
     }
-
-    // const firstDiceOptions = {
-    //   min: 0,
-    //   max: 6,
-    //   integer: true
-    // }
-    // const secondDiceOptions = {
-    //   min: 0,
-    //   max: 6,
-    //   integer: true
-    // }
-    
-    // let firstDice = rn(firstDiceOptions);
-    // let secondDice = rn(secondDiceOptions);
-    // message.reply("Rolling dice...")
-    // setTimeout(() => {
-    //   message.reply(`You rolled ${firstDice} and ${secondDice}!`);
-    // }, 2000);
   }
 })
 
